@@ -272,3 +272,279 @@ To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
 
 MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/bundle-2)
 ```
+## Exercise 2
+```bash
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (dev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ touch service.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git add .
+i
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git commit -m "added a paragraph in service"
+[ft/service-redesign 503161a] added a paragraph in service
+ 1 file changed, 1 insertion(+)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git status -s
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git push origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 396 bytes | 396.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions/pull/new/ft/service-redesign
+remote:
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git status -s
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git branch
+  dev
+  ft/bundle-2
+  ft/service-redesign
+* main
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ start service.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git status -s
+ M service.html
+g
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git add .
+i
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git commit -m "I added different paragraph in main branch"
+[main bade186] I added different paragraph in main branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git push origin main
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git status -s
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git status -s
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git pull origin main
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (2/2), 965 bytes | 60.00 KiB/s, done.
+From https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions
+ * branch            main       -> FETCH_HEAD
+   4059cf5..7427bfd  main       -> origin/main
+Merge made by the 'ort' strategy.
+ README.md  | 273 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ about.html |  10 +++
+ home.html  |  10 +++
+ 3 files changed, 293 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git status -s
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 673 bytes | 673.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+   7427bfd..5e036c2  main -> main
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git diff
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git diff main
+diff --git a/README.md b/README.md
+index bfb73af..79867dc 100644
+--- a/README.md
++++ b/README.md
+@@ -1,274 +1 @@
+ # Gym-Git-Exercise-Solutions
+-## Bundle 1
+-### Exercise 1
+-
+-```bash
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+-$ git init
+-Reinitialized existing Git repository in C:/Users/MUGABE/Desktop/Gym-Git-Exercis
+-e-Solutions/.git/
+-
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+-$ touch file1.txt
+-
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+-$ echo "Hello" >>file1.txt
+-
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+-$ git branch -M master
+-
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (master)
+-$ git branch -M main
+-
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+-$ git add .
+-warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the nex
+-t time Git touches it
+-
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+-$ git add -f .
+-
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+-$ git commit -m "initial commit"
+-[main 14916d5] initial commit
+- 1 file changed, 2 insertions(+)
+- create mode 100644 file1.txt
+-
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+-$ git remote -v
+-origin  https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git (fetch)
+-origin  https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git (push)
+-
+-MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+-$ git push -u origin main
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git diff ft/service-redesign main
+diff --git a/README.md b/README.md
+index 79867dc..bfb73af 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,274 @@
+ # Gym-Git-Exercise-Solutions
++## Bundle 1
++### Exercise 1
++
++```bash
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
++$ git init
++Reinitialized existing Git repository in C:/Users/MUGABE/Desktop/Gym-Git-Exercis
++e-Solutions/.git/
++
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
++$ touch file1.txt
++
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
++$ echo "Hello" >>file1.txt
++
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
++$ git branch -M master
++
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (master)
++$ git branch -M main
++
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
++$ git add .
++warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the nex
++t time Git touches it
++
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
++$ git add -f .
++
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
++$ git commit -m "initial commit"
++[main 14916d5] initial commit
++ 1 file changed, 2 insertions(+)
++ create mode 100644 file1.txt
++
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
++$ git remote -v
++origin  https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git (fetch)
++origin  https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git (push)
++
++MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
++$ git push -u origin main
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git merge main
+Auto-merging service.html
+CONFLICT (content): Merge conflict in service.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign|MERGING)
+$ git status -s
+M  README.md
+A  about.html
+A  home.html
+UU service.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign|MERGING)
+$ git add .
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign|MERGING)
+$ git commit -m "I solved conflict"
+[ft/service-redesign 5774f25] I solved conflict
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git status -s
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/service-redesign)
+$ git push origin ft/service-redesign
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 412 bytes | 206.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+   503161a..5774f25  ft/service-redesign -> ft/service-redesign
+```
