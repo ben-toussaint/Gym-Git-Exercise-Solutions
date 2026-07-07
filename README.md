@@ -763,3 +763,303 @@ To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
 MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
 $
 ```
+## Exercise 2
+```bash
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/team-page)
+$ touch team.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/team-page)
+$ git add .
+git
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/team-page)
+$ git commit -m "added some content in team file"
+[ft/team-page 8052803] added some content in team file
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/team-page)
+$ git push origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 453 bytes | 453.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions/pull/new/ft/team-page
+remote:
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/team-page -> ft/team-page
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/contact-page)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/team-page)
+$ git log
+commit 8052803147cdf0a1c7b96cd20a58a7d7eeca4836 (HEAD -> ft/team-page, origin/ft/team-page)
+Author: Mugabe Ben Toussaint <mbentoussaint@gmail.com>
+Date:   Tue Jul 7 02:27:20 2026 +0200
+
+    added some content in team file
+
+commit e5f2233b6ebfbf9644c56fc02ec860aa04d22115 (origin/main, origin/HEAD, main, ft/contact-page)
+Merge: ece936e 50b188f
+Author: Mugabe Ben Toussaint <mbentoussaint@gmail.com>
+Date:   Tue Jul 7 02:23:54 2026 +0200
+
+    Merge branch 'main' of https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions
+
+commit ece936e9395cab7d0651c1b12b1d2d12c22cd81d
+Author: Mugabe Ben Toussaint <mbentoussaint@gmail.com>
+Date:   Tue Jul 7 02:23:29 2026 +0200
+
+    Bundle 2 Exercise 2 README.md
+
+commit 50b188fe9aaaa9c6963a91accd4134add817466b
+Merge: 5e036c2 5774f25
+Author: Ben Toussaint MUGABE <mbentoussaint@gmail.com>
+Date:   Tue Jul 7 02:21:26 2026 +0200
+
+    Merge pull request #3 from ben-toussaint/ft/service-redesign
+
+    added a paragraph in service
+
+commit 5774f25ae07c6c245bde749e566e86d608e228a5 (origin/ft/service-redesign, ft/service-redesign)
+Merge: 503161a 5e036c2
+Author: Mugabe Ben Toussaint <mbentoussaint@gmail.com>
+Date:   Tue Jul 7 02:19:00 2026 +0200
+
+    I solved conflict
+
+commit 5e036c22591183d0378712ebd94bcf7d97ac892f
+Merge: bade186 7427bfd
+Author: Mugabe Ben Toussaint <mbentoussaint@gmail.com>
+Date:   Tue Jul 7 02:13:19 2026 +0200
+
+    Merge branch 'main' of https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions
+
+commit bade186bf53c511e069971a8ba97bae63ab9e6af
+Author: Mugabe Ben Toussaint <mbentoussaint@gmail.com>
+Date:   Tue Jul 7 02:09:35 2026 +0200
+
+    I added different paragraph in main branch
+
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/contact-page)
+$ git cherry-pick 8052803147cdf0a1c7b96cd20a58a7d7eeca4836
+[ft/contact-page 2c8202b] added some content in team file
+ Date: Tue Jul 7 02:27:20 2026 +0200
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/contact-page)
+$ git status -s
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/contact-page)
+$ touch contact.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/contact-page)
+$ git status -s
+?? contact.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/contact-page)
+$ git add .
+gt
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/contact-page)
+$ git commit -m "initial commit for contact page"
+[ft/contact-page 7e7a99a] initial commit for contact page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 contact.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/contact-page)
+$ git push origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 754 bytes | 377.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions/pull/new/ft/contact-page
+remote:
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/contact-page)
+$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ touhc faq.html
+bash: touhc: command not found
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ touch faq.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ git add .
+i
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ gti commit -m "initial commit for the faq page"
+bash: gti: command not found
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ git commit -m "initial commit for the faq page"
+[ft/faq-page fb40b76] initial commit for the faq page
+ 1 file changed, 10 insertions(+)
+ create mode 100644 faq.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ git push origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 440 bytes | 440.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions/pull/new/ft/faq-page
+remote:
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ git revert 8052803147cdf0a1c7b96cd20a58a7d7eeca4836
+[ft/faq-page 212474f] Revert "added some content in team file"
+ 1 file changed, 11 deletions(-)
+ delete mode 100644 team.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ git status -s
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ git push origin ft/faq-page
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 288 bytes | 288.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+   fb40b76..212474f  ft/faq-page -> ft/faq-page
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ git branch
+  dev
+  ft/bundle-2
+  ft/contact-page
+* ft/faq-page
+  ft/service-redesign
+  ft/team-page
+  main
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git status -s
+ M README.md
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git add .
+gt o
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git commit -m "Readme file on bundle 3 exercise 1"
+[main 745cda6] Readme file on bundle 3 exercise 1
+ 1 file changed, 215 insertions(+)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/faq-page)
+$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/home-page-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git status -s
+ M home.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git add .
+it
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git commit -m "added changes for rebase"
+[main 9e68e51] added changes for rebase
+ 1 file changed, 1 insertion(+)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/home-page-redesign)
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/home-page-redesign)
+$ git status -s
+ M home.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/home-page-redesign)
+$ git add .
+gt
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/home-page-redesign)
+$ git commit -m "added other changes after rebasing in home file"
+[ft/home-page-redesign 098165b] added other changes after rebasing in home file
+ 1 file changed, 1 insertion(+)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/home-page-redesign)
+$ git push origin ft/home-page-redesign
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (20/20), 3.57 KiB | 730.00 KiB/s, done.
+Total 20 (delta 11), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (11/11), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+```
