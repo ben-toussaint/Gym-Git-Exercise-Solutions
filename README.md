@@ -1112,3 +1112,122 @@ Total 54 (delta 25), reused 3 (delta 0), pack-reused 0 (from 0)
 remote: Resolving deltas: 100% (25/25), done.
 To https://github.com/ben-toussaint/
 ```
+## Exercise 2
+```bash
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git status -s
+ M home.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git add .
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git commit -m "initial footer commits"
+[ft/footer ff4037f] initial footer commits
+ 1 file changed, 1 insertion(+)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git add .
+g
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git commit -m "second commit of changes in the footer branch"
+[ft/footer cdae40a] second commit of changes in the footer branch
+ 1 file changed, 1 insertion(+)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git push origin ft/footer
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 651 bytes | 651.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions/pull/ne
+w/ft/footer
+remote:
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/footer -> ft/footer
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git merge --squash ft/squashing
+Already up to date. (nothing to squash)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout ft/squashing
+Switched to branch 'ft/squashing'
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git status -s
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git merge --squash ft/footer
+Updating 374647d..cdae40a
+Fast-forward
+Squash commit -- not updating HEAD
+ home.html | 2 ++
+ 1 file changed, 2 insertions(+)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git status -s
+M  home.html
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git add .
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git commit -m "my first squash"
+[ft/squashing 7c376e8] my first squash
+ 1 file changed, 2 insertions(+)
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git push origin ft/squashing
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 372 bytes | 372.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions/pull/ne
+w/ft/squashing
+remote:
+To https://github.com/ben-toussaint/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/squashing -> ft/squashing
+
+MUGABE@DESKTOP-JNTT3PG MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+```
